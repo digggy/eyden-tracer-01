@@ -6,7 +6,7 @@
 
 Mat RenderFrame(ICamera& camera)
 {
-	// scene objects
+	// The scene objects
 	
 	CPrimSphere s1(RGB(1, 0, 0), Vec3f(-2, 1.7f, 0), 2);
 	CPrimSphere s2(RGB(0, 1, 0), Vec3f(1, -1, 1), 2.2f);
@@ -46,7 +46,7 @@ Mat RenderFrame(ICamera& camera)
 			}
 
 			
-			img.at<Vec3f>(y, x) = col; // store pixel color
+			img.at<Vec3f>(y, x) = col; // Store pixel color
 		}
 	
 	img.convertTo(img, CV_8UC3, 255);
@@ -56,7 +56,7 @@ Mat RenderFrame(ICamera& camera)
 int main(int argc, char* argv[])
 {
 	const Size resolution(800, 600);
-	// render three images with different camera settings
+	// Render three images with different camera settings
 	
 	CCameraPerspective c1(Vec3f(0, 0, 10), Vec3f(0, 0, -1), Vec3f(0, 1, 0), 60, resolution);
 	Mat img1 = RenderFrame(c1);
